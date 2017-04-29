@@ -125,7 +125,7 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
 | margin-start          | margin-left           | margin-right          |
 | margin-end            | margin-right          | margin-left           |
 | margin: 0 2px 0 3px;  | margin: 0 2px 0 3px;  | margin: 0 3px 0 2px;  |
-| **Float**             |                       |                       |
+| **Position**          |                       |                       |
 | start: 1px;           | left: 1px;            | right: 1px;           |
 | end: 1px;             | right: 1px;           | left: 1px;            |
 
