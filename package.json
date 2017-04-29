@@ -30,7 +30,8 @@
   },
   "homepage": "https://github.com/sandrina-p/postcss-start-to-end",
   "dependencies": {
-    "postcss": "^5.2.6"
+    "postcss": "^5.2.6",
+    "postcss-browser-reporter": "^0.5.0"
   },
   "devDependencies": {
     "eslint": "^3.12.2",
