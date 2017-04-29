@@ -140,7 +140,7 @@ Output on CLI warnings about properties / rules found that don't follow start-to
 Don't you feel like find/replace rules in each one of your `*.css` files?
 
 No worries, I built a simple tool that does that for you.
-You just need to tell where you want to run the converter (folder or file.css). By default it will run in `src`
+You just need to tell where you want to run the converter (folder or file.css). By default it runs in `src` folder
 
 **Input**
 ```css
@@ -152,13 +152,13 @@ You just need to tell where you want to run the converter (folder or file.css). 
 ```
 
 ### Convert from LTR layout
-Convert runs on `src` by default  
+_Convert_ by default runs on `src` folder  
 `node node_modules/postcss-start-to-end/convert`
 
 Set a specific folder to run:  
 `node node_modules/postcss-start-to-end/convert src/components`
 
-Set a specific file:  
+Set a specific file to run:  
 `node node_modules/postcss-start-to-end/convert styles/index.css`
 
 **Output**
@@ -173,13 +173,13 @@ Set a specific file:
 ### Convert RTL layout
 `node node_modules/postcss-start-to-end/convert --rtl`
 
-Convert runs on `src` by default  
+_Convert_ by default runs on `src` folder    
 `node node_modules/postcss-start-to-end/convert --rtl`
 
 Set a specific folder to run:  
 `node node_modules/postcss-start-to-end/convert src/components --rtl`
 
-Set a specific file:  
+Set a specific file to run:  
 `node node_modules/postcss-start-to-end/convert styles/index.css --rtl`
 
 **Output**
