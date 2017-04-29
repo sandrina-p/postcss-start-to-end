@@ -15,7 +15,7 @@ Inspired by Flexbox and CSS Grid syntax, use `start` or `end` to output `left` o
 ```css
 .foo {
     padding-start: 1rem;
-    border-end: 1px solid teal;
+    border-end: 1rem solid teal;
 }
 ```
 
@@ -23,7 +23,7 @@ Inspired by Flexbox and CSS Grid syntax, use `start` or `end` to output `left` o
 ```css
 .foo {
    padding-left: 1rem;
-   border-right: 1px solid teal;
+   border-right: 1rem solid teal;
 }
 ```
 
@@ -31,7 +31,8 @@ Inspired by Flexbox and CSS Grid syntax, use `start` or `end` to output `left` o
 
 ```js
 postcss([
-    require('postcss-start-to-end')
+    require('postcss-start-to-end'),
+    require('postcss-reporter') // show warnings - check options to know more
 ])
 ```
 
@@ -42,7 +43,8 @@ postcss([
     require('postcss-start-to-end')({
         direction: 'RTL',
         warnings: false,
-    })
+    }),
+    require('postcss-reporter')
 ]);
 ```
 
@@ -79,7 +81,7 @@ Default writing mode of CSS.
 ```
 
 #### `warnings`
-Output on CLI (terminal) warnings about properties / rules found that don't follow start-to-end syntax.  
+Output on CLI warnings about properties / rules found that don't follow start-to-end syntax.  
 **Type:** `boolean`  
 **Default:** `true`  
 **Values:** `true`, `false`  
@@ -87,18 +89,9 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
 **Example**
 
 ```css
-    .item {
-        margin-left: 10%;
-    }
-```
-
-You'll need a tool to handle them, for example, [postcss-reporter](https://www.npmjs.com/package/postcss-browser-reporter).
-
-```js
-postcss([
-    require('postcss-start-to-end'),
-    require('postcss-reporter'),
-]);
+.item {
+    margin-left: 10%;
+}
 ```
 
 **Console warning if `direction: ltr:`**
@@ -109,37 +102,37 @@ postcss([
 
 
 
-## Properties supported
+## Rules supported
 
-|         Input         |      Output LTR       |      output RTL       |
-| --------------------- | --------------------- | --------------------- |
-| **Alignment**         |                       |                       |
-| text-align: start;    | text-align: left;     | text-align: right;    |
-| text-align: end;      | text-align: right;    | text-align: left;     |
-| **Clear**             |                       |                       |
-| clear: start;         | clear: left;          | clear: right;         |
-| clear: end;           | clear: right;         | clear: left;          |
-| **Float**             |                       |                       |
-| float: start;         | float: left;          | float: right;         |
-| float: end;           | float: right;         | float: left;          |
-| **Border**            |                       |                       |
-| border-start          | border-left           | border-right          |
-| border-end            | border-right          | border-left           |
-| border-top-start      | border-top-left       | border-top-right      |
-| border-top-end        | border-top-right      | border-top-left       |
-| border-bottom-end     | border-bottom-right   | border-bottom-left    |
-| border-bottom-start   | border-bottom-left    | border-bottom-right   |
-| **Margin**            |                       |                       |
-| margin-start          | margin-left           | margin-right          |
-| margin-end            | margin-right          | margin-left           |
-| margin: 0 2px 0 3px;  | margin: 0 2px 0 3px;  | margin: 0 3px 0 2px;  |
-| **Padding**           |                       |                       |
-| padding-start         | padding-left          | padding-right         |
-| padding-end           | padding-right         | padding-left          |
-| padding: 0 1px 0 4px; | padding: 0 1px 0 4px; | padding: 0 4px 0 1px; |
-| **Position**          |                       |                       |
-| start: 1px;           | left: 1px;            | right: 1px;           |
-| end: 1px;             | right: 1px;           | left: 1px;            |
+|          Input          |       Output LTR        |       output RTL        |
+| ----------------------- | ----------------------- | ----------------------- |
+| **Alignment**           |                         |                         |
+| text-align: start;      | text-align: left;       | text-align: right;      |
+| text-align: end;        | text-align: right;      | text-align: left;       |
+| **Clear**               |                         |                         |
+| clear: start;           | clear: left;            | clear: right;           |
+| clear: end;             | clear: right;           | clear: left;            |
+| **Float**               |                         |                         |
+| float: start;           | float: left;            | float: right;           |
+| float: end;             | float: right;           | float: left;            |
+| **Border**              |                         |                         |
+| border-start            | border-left             | border-right            |
+| border-end              | border-right            | border-left             |
+| border-top-start        | border-top-left         | border-top-right        |
+| border-top-end          | border-top-right        | border-top-left         |
+| border-bottom-end       | border-bottom-right     | border-bottom-left      |
+| border-bottom-start     | border-bottom-left      | border-bottom-right     |
+| **Margin**              |                         |                         |
+| margin-start            | margin-left             | margin-right            |
+| margin-end              | margin-right            | margin-left             |
+| margin: 0 2rem 0 3rem;  | margin: 0 2rem 0 3rem;  | margin: 0 3rem 0 2rem;  |
+| **Padding**             |                         |                         |
+| padding-start           | padding-left            | padding-right           |
+| padding-end             | padding-right           | padding-left            |
+| padding: 0 1rem 0 4rem; | padding: 0 1rem 0 4rem; | padding: 0 4rem 0 1rem; |
+| **Position**            |                         |                         |
+| start: 1rem;            | left: 1rem;             | right: 1rem;            |
+| end: 1rem;              | right: 1rem;            | left: 1rem;             |
 
 
 ## BONUS: Convert your existing code to this syntax
@@ -151,8 +144,8 @@ No worries, I built a simple tool that does that for you.
 **Input**
 ```css
 .item {
-    padding-left: 5px;
-    margin-right : 15px;
+    padding-left: 5rem;
+    margin-right : 1rem;
     float:left;
 }
 ```
@@ -163,8 +156,8 @@ No worries, I built a simple tool that does that for you.
 **Output**
 ```css
 .item {
-    padding-start: 5px;
-    margin-end : 15px;
+    padding-start: 5rem;
+    margin-end : 1rem;
     float:start;
 }
 ```
@@ -175,8 +168,8 @@ No worries, I built a simple tool that does that for you.
 **Output**
 ```css
 .item {
-    padding-end: 5px;
-    margin-start : 15px;
+    padding-end: 5rem;
+    margin-start : 1rem;
     float:end;
 }
 ```
