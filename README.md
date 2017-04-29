@@ -220,4 +220,4 @@ Any doubts or suggestions you may have, feel free to create an issue on [github 
 
 
 ## License
-[MIT License](LICENCE)
+[MIT License](LICENSE)
