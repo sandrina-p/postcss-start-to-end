@@ -155,7 +155,6 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
         root.walkDecls(rule => {
 
             if (rule.value) {
-
                 if (finalOpts.warnings) {
                     warnAboutNoStartEndSyntax(rule.prop, rule.value, rule.source.start.line, result);
                 }
@@ -177,11 +176,9 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
                     rule.value = newSwapValue;
                     return true;
                 }
-
-                return false;
             }
 
-            return false;
+            return true;
         });
     };
 });
