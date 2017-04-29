@@ -1,64 +1,64 @@
 {
-    "name": "postcss-start-to-end",
-    "version": "0.1.0",
-    "description": "PostCSS plugin that let you control your layout (ltr or rtl) through logical rather than physical rules",
-    "keywords": [
-        "postcss",
-        "css",
-        "postcss-plugin",
-        "rtl",
-        "ltr",
-        "direction",
-        "start",
-        "end",
-        "layout",
-        "universal",
-        "logical-properties",
-        "padding",
-        "margin",
-        "border",
-        "text-algin",
-        "float",
-        "clear",
-        "position"
-    ],
-    "author": "Sandrina Pereira <sandrin4pereir4@gmail.com>",
-    "license": "MIT",
-    "repository": "sandrina-p/postcss-start-to-end",
-    "bugs": {
-        "url": "https://github.com/sandrina-p/postcss-start-to-end/issues"
-    },
-    "homepage": "https://github.com/sandrina-p/postcss-start-to-end",
-    "dependencies": {
-        "postcss": "^5.2.6",
-        "postcss-browser-reporter": "^0.5.0"
-    },
-    "devDependencies": {
-        "eslint": "^3.12.2",
-        "eslint-config-postcss": "^2.0.2",
-        "jest": "^18.0.0"
-    },
-    "scripts": {
-        "test": "jest && eslint *.js"
-    },
-    "eslintConfig": {
-        "extends": "eslint-config-postcss/es5",
-        "env": {
-            "jest": true
-        }
-    },
-    "jest": {
-        "collectCoverage": true,
-        "collectCoverageFrom" : [
-            "index.js"
-        ],
-        "coverageThreshold": {
-            "global": {
-                "branches": 50,
-                "functions": 50,
-                "lines": 50,
-                "statements": 50
-            }
-        }
+  "name": "postcss-start-to-end",
+  "version": "0.2.0",
+  "description": "PostCSS plugin that let you control your layout (ltr or rtl) through logical rather than physical rules",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "rtl",
+    "ltr",
+    "direction",
+    "start",
+    "end",
+    "layout",
+    "universal",
+    "logical-properties",
+    "padding",
+    "margin",
+    "border",
+    "text-algin",
+    "float",
+    "clear",
+    "position"
+  ],
+  "author": "Sandrina Pereira <sandrin4pereir4@gmail.com>",
+  "license": "MIT",
+  "repository": "sandrina-p/postcss-start-to-end",
+  "bugs": {
+    "url": "https://github.com/sandrina-p/postcss-start-to-end/issues"
+  },
+  "homepage": "https://github.com/sandrina-p/postcss-start-to-end",
+  "dependencies": {
+    "postcss": "^5.2.6",
+    "postcss-browser-reporter": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-postcss": "^2.0.2",
+    "jest": "^18.0.0"
+  },
+  "scripts": {
+    "test": "jest && eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5",
+    "env": {
+      "jest": true
     }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    }
+  }
 }
