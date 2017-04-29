@@ -29,5 +29,5 @@
         'module': false,
         'it': false,
         'expect': false,
-    }
+    },
 }
