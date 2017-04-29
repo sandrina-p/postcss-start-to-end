@@ -23,7 +23,7 @@ it('LTR: border-start: -> border-left:', () => {
     css = '.foo { border-start: 1px solid teal; }';
     cssOutputted = '.foo { border-left: 1px solid teal; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: border-start: -> border-right:', () => {
@@ -37,7 +37,7 @@ it('LTR: border-end -> border-right:', () => {
     css = '.foo { border-end: 1px solid teal; }';
     cssOutputted = '.foo { border-right: 1px solid teal; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: border-end -> border-left:', () => {
@@ -55,7 +55,7 @@ it('LTR: padding-start: -> padding-left:', () => {
     css = '.foo { padding-start: 1rem; }';
     cssOutputted = '.foo { padding-left: 1rem; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: padding-start: -> padding-right:', () => {
@@ -69,7 +69,7 @@ it('LTR: padding-end -> padding-right:', () => {
     css = '.foo { padding-end: 1rem; }';
     cssOutputted = '.foo { padding-right: 1rem; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: padding-end -> padding-left:', () => {
@@ -82,13 +82,13 @@ it('RTL: padding-end -> padding-left:', () => {
 it('LTR: padding: 1rem 1rem 1rem 2rem; -> same', () => {
     css = '.foo { padding: 1rem 1rem 1rem 2rem; }';
 
-    return run(css, css, { });
+    return run(css, css, {});
 });
 
 it('LTR: padding: 1rem 1rem   1rem  2rem; -> same', () => {
     css = '.foo { padding: 1rem 1rem   1rem  2rem; }';
 
-    return run(css, css, { });
+    return run(css, css, {});
 });
 
 it('RTL: padding: 1rem 2rem 1rem 2rem; -> padding: 1rem 2rem 1rem 1rem;', () => {
@@ -114,7 +114,7 @@ it('LTR: margin-start: -> margin-left:', () => {
     css = '.foo { margin-start: 1rem; }';
     cssOutputted = '.foo { margin-left: 1rem; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: margin-start: -> margin-right:', () => {
@@ -128,7 +128,7 @@ it('LTR: margin-end -> margin-right:', () => {
     css = '.foo { margin-end: 1rem; }';
     cssOutputted = '.foo { margin-right: 1rem; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: margin-end -> margin-left:', () => {
@@ -146,7 +146,7 @@ it('LTR: start: -> left:', () => {
     css = '.foo { start: 1rem; }';
     cssOutputted = '.foo { left: 1rem; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: start: -> right:', () => {
@@ -160,7 +160,7 @@ it('LTR: end: -> right:', () => {
     css = '.foo { end: 1rem; }';
     cssOutputted = '.foo { right: 1rem; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: end: -> left:', () => {
@@ -179,7 +179,7 @@ it('LTR: text-align: start; -> text-align: left;', () => {
     css = '.foo { text-align: start; }';
     cssOutputted = '.foo { text-align: left; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: text-align: start; -> text-align: right;', () => {
@@ -193,7 +193,7 @@ it('LTR: text-align: end; -> text-align: right;', () => {
     css = '.foo { text-align: end; }';
     cssOutputted = '.foo { text-align: right; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: text-align: end; -> text-align: left;', () => {
@@ -211,7 +211,7 @@ it('LTR: clear: start; -> clear: left;', () => {
     css = '.foo { clear: start; }';
     cssOutputted = '.foo { clear: left; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: clear: start; -> clear: right;', () => {
@@ -225,7 +225,7 @@ it('LTR: clear: end; -> clear: right;', () => {
     css = '.foo { clear: end; }';
     cssOutputted = '.foo { clear: right; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: clear: end; -> clear: left;', () => {
@@ -244,7 +244,7 @@ it('LTR: float: start; -> float: left;', () => {
     css = '.foo { float: start; }';
     cssOutputted = '.foo { float: left; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: float: start; -> float: right;', () => {
@@ -258,7 +258,7 @@ it('LTR: float: end; -> float: right;', () => {
     css = '.foo { float: end; }';
     cssOutputted = '.foo { float: right; }';
 
-    return run(css, cssOutputted, { });
+    return run(css, cssOutputted, {});
 });
 
 it('RTL: float: end; -> float: left;', () => {
@@ -266,4 +266,92 @@ it('RTL: float: end; -> float: left;', () => {
     cssOutputted = '.foo { float: left; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+
+/* ==================================================================
+    Multiple Props Test
+================================================================== */
+it('LTR: Convert multiple rules', () => {
+    css = '.foo { float: end; margin-end: 1rem;}';
+    cssOutputted = '.foo { float: right; margin-right: 1rem;}';
+
+    return run(css, cssOutputted, {});
+});
+
+it('RTL: Convert multiple rules', () => {
+    css = '.foo { float: end; margin-end: 1rem;}';
+    cssOutputted = '.foo { float: left; margin-left: 1rem;}';
+
+    return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+/* ==================================================================
+    Warning Props Test
+================================================================== */
+
+it('LTR: Warn about margin-right to use margin-end ', () => {
+    css = '.foo { margin-right: 1rem;}';
+    const warning = '"margin-right:" found on line 1. Write instead "margin-end"';
+
+    return postcss([ plugin({}) ]).process(css)
+        .then(result => {
+            expect(result.css).toEqual(css);
+            expect(result.warnings()[0]).toHaveProperty('text', warning);
+        });
+});
+
+it('LTR: Warn about right to use end ', () => {
+    css = '.foo { right: 10%;}';
+    const warning = '"right:" found on line 1. Write instead "end"';
+
+    return postcss([ plugin({}) ]).process(css)
+        .then(result => {
+            expect(result.css).toEqual(css);
+            expect(result.warnings()[0]).toHaveProperty('text', warning);
+        });
+});
+
+it('RTL: Warn about padding-left to use padding-end', () => {
+    css = '.foo { padding-left: 1rem; }';
+    const warning = '"padding-left:" found on line 1. Write instead "padding-end"';
+
+    return postcss([ plugin( { direction: 'RTL' } ) ]).process(css)
+        .then(result => {
+            expect(result.css).toEqual(css);
+            expect(result.warnings()[0]).toHaveProperty('text', warning);
+        });
+});
+
+
+/* ==================================================================
+    Warning Values Test
+================================================================== */
+
+it('LTR: Warn about float: right; to use float: end;', () => {
+    css = '.foo { float: right; }';
+    const warning = '"float: right;" found on line 1. Write instead "float: end;"';
+
+    return postcss([ plugin() ]).process(css)
+        .then(result => {
+            expect(result.css).toEqual(css);
+            expect(result.warnings()[0]).toHaveProperty('text', warning);
+        });
+});
+
+it('LTR: Warn about float: right; to use float: end;', () => {
+    css = '.foo { text-align: left; }';
+    const warning = '"text-align: left;" found on line 1. Write instead "text-align: end;"';
+
+    return postcss([ plugin( { direction: 'RTL' } ) ]).process(css)
+        .then(result => {
+            expect(result.css).toEqual(css);
+            expect(result.warnings()[0]).toHaveProperty('text', warning);
+        });
+});
+
+it('LTR: Do not warn about float: center;', () => {
+    css = '.foo { float: center; }';
+
+    return run(css, css, { });
 });
