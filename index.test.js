@@ -1,5 +1,3 @@
-/* eslint max-len: ["error", 120] */
-
 var postcss = require('postcss');
 
 var plugin = require('./');
