@@ -6,7 +6,7 @@
 [PostCSS](https://github.com/postcss/postcss) plugin that let you control your layout (`ltr` or `rtl`) through logical rather than direction / physical rules.
 
 [PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/sandrina-p/postcss-start-to-end.svg
+[ci-img]:  https://travis-ci.org/sandrina-p/postcss-start-to-end.svg?branch=master
 [ci]:      https://travis-ci.org/sandrina-p/postcss-start-to-end
 
 Inspired by Flexbox and CSS Grid syntax, use `start` or `end` to output `left` or `right` depending on document direction (`rtl` or `ltr`).
