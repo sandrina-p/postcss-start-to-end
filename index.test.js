@@ -10,10 +10,6 @@ function run(input, output, opts) {
         });
 }
 
-/* Write tests here
-
 it('does something', () => {
     return run('a{ }', 'a{ }', { });
 });
-
-*/

@@ -1,5 +1,6 @@
 var postcss = require('postcss');
 
+/* eslint-disable */
 module.exports = postcss.plugin('postcss-start-to-end', function (opts) {
     opts = opts || {};
 
@@ -7,7 +8,9 @@ module.exports = postcss.plugin('postcss-start-to-end', function (opts) {
 
     return function (root, result) {
 
-        // Transform CSS AST here
+        // some code
 
     };
 });
+
+/* eslint-enable */
