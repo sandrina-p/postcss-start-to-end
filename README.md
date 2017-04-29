@@ -1,6 +1,6 @@
 # PostCSS Start To End [![Build Status][ci-img]][ci]
 
-[PostCSS](https://github.com/postcss/postcss) plugin that let you control your layout (ltr or rtl) through logical rather than direction / physical rules
+[PostCSS](https://github.com/postcss/postcss) plugin that let you control your layout (`ltr` or `rtl`) through logical rather than direction / physical rules.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/sandrina-p/postcss-start-to-end.svg
@@ -48,33 +48,31 @@ postcss([
 #### `direction`
 Default writing mode of CSS.  
 **Type:** `string`  
-**Default:** 'LTR'  
+**Default:** `'LTR'`  
 **Values:** `'LTR'`, `'RTL'`  
 
-##### Example
-
-**INPUT**
+**Input**
 ```css
-    .item {
-        border-start: 1px solid teal;
-        padding: 0 3rem 0 0;
-    }
+.item {
+    border-start: 1px solid teal;
+    padding: 0 3rem 0 0;
+}
 ```
 
 **output with `direction: LTR`**
 ```css
-    .item {
-        border-left: 1px solid teal;
-        padding: 0 3rem 0 0;
-    }
+.item {
+    border-left: 1px solid teal;
+    padding: 0 3rem 0 0;
+}
 ```
 
 **output with `direction: RTL`**
 ```css
-    .item {
-        border-right: 1px solid teal;
-        padding: 0 0 0 3rem;
-    }
+.item {
+    border-right: 1px solid teal;
+    padding: 0 0 0 3rem;
+}
 ```
 
 #### `warnings`
@@ -91,22 +89,22 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
     }
 ```
 
-**Console warning if direction: ltr:**
+**Console warning if `direction: ltr:`**
 >  margin-left: 10%; found on line 2. Replace it by `margin-start` to support LTR and RTL directions.
 
-**Console warning if direction: rtl:**
+**Console warning if `direction: rtl:`**
 >  margin-left: 10%; found on line 2. Replace it by `margin-end` to support LTR and RTL directions.
 
 
 
 ## Properties supported
 
-|         Input         |      Output LTR       |      output LTR       |
+|         Input         |      Output LTR       |      output RTL       |
 | --------------------- | --------------------- | --------------------- |
 | **Alignment**         |                       |                       |
 | text-align: start;    | text-align: left;     | text-align: right;    |
 | text-align: end;      | text-align: right;    | text-align: left;     |
-| *Clear*               |                       |                       |
+| **Clear**             |                       |                       |
 | clear: start;         | clear: left;          | clear: right;         |
 | clear: end;           | clear: right;         | clear: left;          |
 | **Float**             |                       |                       |
@@ -132,31 +130,37 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
 | end: 1px;             | right: 1px;           | left: 1px;            |
 
 
-## Bonus: Convert your existing code to this syntax
+## BONUS: Convert your existing code to this syntax
 
+### Convert from LTR layout
 `node node_modules/postcss-logical-props-simplify/convert src/`
 
+**Input**
 ```css
-/* Input */
 .item {
     padding-left: 5px;
 }
+```
 
-/* Output */
+**Output**
+```
 .item {
     padding-start: 5px;
 }
 ```
 
+### Convert RTL layout
 `node node_modules/postcss-logical-props-simplify/convert --rtl src/`
 
+**Input**
 ```css
-/* Input */
 .item {
     padding-left: 5px;
 }
+```
 
-/* Output */
+**Output**
+```
 .item {
     padding-end: 5px;
 }
@@ -165,13 +169,13 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
 
 ## F.A.Q.
 
-**Why should I use this instead of plugins that convert "*-left" to "*-right" and vice-versa?**
+**Why should I use this instead of plugins that convert `*-left` to `*-right` and vice-versa?**
 
 This is not a replacement of those kind of plugins.
 
-This is a plugin to let you write code with a logical thought in mind rather than physical/direction thought.
+This is a plugin to let you write code with a logical thought in mind rather than a physical/direction one.
 
-Then if you need to convert the outputted CSS to the opposite direction you might want to try [RTLCSS](http://rtlcss.com/) or another plugins.
+Then if you need to convert the outputted CSS to the opposite direction you might want to try [postcss-rtl](https://www.npmjs.com/package/postcss-rtl).
 
 **Is this tested?**
 
@@ -180,11 +184,12 @@ The plugin has [100% coverage test](index.test.js) with all possible scenarios t
 
 ## Motivation | References
 
-There is a CSS Draft Spec about [CSS Logical Properties](https://drafts.csswg.org/css-logical-props/) in a early phase. Because this technology's specification [has not stabilized](https://drafts.csswg.org/css-logical-props/#issues-index), I decided to keep this plugin syntax simple and straight following what is already defined without adding _more sugar_.
+There is a CSS Draft Spec about [CSS Logical Properties](https://drafts.csswg.org/css-logical-props/) in Level 1.  
+Because this technology's specification [has not stabilized](https://drafts.csswg.org/css-logical-props/#issues-index), I decided to keep this plugin syntax simple and straight following what is already defined without adding _more sugar_.
 
 
 ## Contribute
-Any doubts or suggestions you may have feel free to create an issue on [github repo](https://github.com/sandrina-p/postcss-ltr-rtl-detect).
+Any doubts or suggestions you may have, feel free to create an issue on [github repository](https://github.com/sandrina-p/postcss-start-to-end/issues).
 
 
 ## License
