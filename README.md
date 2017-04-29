@@ -117,14 +117,14 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
 | border-top-end        | border-top-right      | border-top-left       |
 | border-bottom-end     | border-bottom-right   | border-bottom-left    |
 | border-bottom-start   | border-bottom-left    | border-bottom-right   |
-| **Padding**           |                       |                       |
-| padding-start         | padding-left          | padding-right         |
-| padding-end           | padding-right         | padding-left          |
-| padding: 0 1px 0 4px; | padding: 0 1px 0 4px; | padding: 0 4px 0 1px; |
 | **Margin**            |                       |                       |
 | margin-start          | margin-left           | margin-right          |
 | margin-end            | margin-right          | margin-left           |
 | margin: 0 2px 0 3px;  | margin: 0 2px 0 3px;  | margin: 0 3px 0 2px;  |
+| **Padding**           |                       |                       |
+| padding-start         | padding-left          | padding-right         |
+| padding-end           | padding-right         | padding-left          |
+| padding: 0 1px 0 4px; | padding: 0 1px 0 4px; | padding: 0 4px 0 1px; |
 | **Position**          |                       |                       |
 | start: 1px;           | left: 1px;            | right: 1px;           |
 | end: 1px;             | right: 1px;           | left: 1px;            |
