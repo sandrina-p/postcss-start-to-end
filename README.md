@@ -141,37 +141,40 @@ postcss([
 
 ## BONUS: Convert your existing code to this syntax
 
-### Convert from LTR layout
-`node node_modules/postcss-logical-props-simplify/convert src/`
+Don't you feel like find/replace rules in each one of your `*.css` files?
+
+No worries, I built a simple tool that does that for you.  
 
 **Input**
 ```css
 .item {
     padding-left: 5px;
+    margin-right : 15px;
+    float:left;
 }
 ```
 
+### Convert from LTR layout
+`node node_modules/postcss-start-to-end/convert`
+
 **Output**
-```
+```css
 .item {
     padding-start: 5px;
+    margin-end : 15px;
+    float:start;
 }
 ```
 
 ### Convert RTL layout
-`node node_modules/postcss-logical-props-simplify/convert --rtl src/`
-
-**Input**
-```css
-.item {
-    padding-left: 5px;
-}
-```
+`node node_modules/postcss-start-to-end/convert --rtl src/`
 
 **Output**
-```
+```css
 .item {
     padding-end: 5px;
+    margin-start : 15px;
+    float:end;
 }
 ```
 
@@ -188,7 +191,9 @@ Then if you need to convert the outputted CSS to the opposite direction you migh
 
 **Is this tested?**
 
-The plugin has [100% coverage test](index.test.js) with all possible scenarios that crossed my mind. Also the [Travis-ci](https://travis-ci.org/sandrina-p/postcss-start-to-end) is doing it's job!
+- The PostCSS Plugin has [100% coverage test](coverage/lcov-report/index.html) with all [possible scenarios](index.html) that crossed my mind.
+- The Bonus Converter tests will be added soon!
+- Don't fear: [Travis-ci](https://travis-ci.org/sandrina-p/postcss-start-to-end) is doing it's job!
 
 
 ## Motivation | References

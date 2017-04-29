@@ -85,6 +85,12 @@ it('LTR: padding: 1rem 1rem 1rem 2rem; -> same', () => {
     return run(css, css, {});
 });
 
+it('LTR: padding: 1rem 2rem 1rem; -> same', () => {
+    css = '.foo { padding: 1rem 1rem 2rem; }';
+
+    return run(css, css, {});
+});
+
 it('LTR: padding: 1rem 1rem   1rem  2rem; -> same', () => {
     css = '.foo { padding: 1rem 1rem   1rem  2rem; }';
 
@@ -103,6 +109,12 @@ it('RTL: padding: 1rem 1rem   1rem  3rem; -> padding: 1rem 3rem 1rem 1rem;', () 
     cssOutputted = '.foo { padding: 1rem 3rem 1rem 1rem; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('RTL: padding: 1rem 1rem 3rem; -> same', () => {
+    css = '.foo { padding: 1rem 1rem 3rem; }';
+
+    return run(css, css, { direction: 'RTL' });
 });
 
 
