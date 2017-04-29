@@ -69,10 +69,10 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
             case 'padding':
                 if (logic.reorderValues) {
 
-                    // [1] split values by " " (spaces) found:
+                    // [1] split values by " " (spaces) found.
                     // '1rem 1rem 1rem 4rem'
                     // '1rem  1rem   1rem 1rem'
-                    // both should return: ['1rem', '1rem', '1rem', '4rem']
+                    // both should return ['1rem', '1rem', '1rem', '4rem']
                     const arrValues = ruleValue.split(/\s{1,}/g); // [1]
 
                     // if value has all the 4 sides
