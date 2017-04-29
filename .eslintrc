@@ -11,6 +11,7 @@
         'indent': ['error', 4],
         'linebreak-style': [ 'error', 'unix' ],
         'quotes': [ 'error', 'single' ],
+        'max-len': ['error', 120],
         'semi': [ 'error', 'always' ],
         'spaced-comment': ['error', 'always', {
             'line': {
@@ -22,12 +23,13 @@
                 'exceptions': ['*'],
                 'balanced': true
             }
-        }]
+        }],
+
     },
     'globals': {
         'require': false,
         'module': false,
         'it': false,
         'expect': false,
-    }
+    },
 }

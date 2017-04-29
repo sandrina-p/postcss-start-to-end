@@ -1,10 +1,13 @@
 .npmignore
 .gitignore
 .editorconfig
+.eslintrc
 
 node_modules/
 npm-debug.log
 yarn.lock
+convert/test-css
+coverage
 
 *.test.js
 .travis.yml
