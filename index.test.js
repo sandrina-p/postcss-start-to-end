@@ -1,3 +1,5 @@
+/* eslint max-len: ["error", 120] */
+
 var postcss = require('postcss');
 
 var plugin = require('./');
@@ -73,6 +75,32 @@ it('LTR: padding-end -> padding-right:', () => {
 it('RTL: padding-end -> padding-left:', () => {
     css = '.foo { padding-end: 1rem; }';
     cssOutputted = '.foo { padding-left: 1rem; }';
+
+    return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('LTR: padding: 1rem 1rem 1rem 2rem; -> same', () => {
+    css = '.foo { padding: 1rem 1rem 1rem 2rem; }';
+
+    return run(css, css, { });
+});
+
+it('LTR: padding: 1rem 1rem   1rem  2rem; -> same', () => {
+    css = '.foo { padding: 1rem 1rem   1rem  2rem; }';
+
+    return run(css, css, { });
+});
+
+it('RTL: padding: 1rem 2rem 1rem 2rem; -> padding: 1rem 2rem 1rem 1rem;', () => {
+    css = '.foo { padding: 1rem 1rem 1rem 2rem; }';
+    cssOutputted = '.foo { padding: 1rem 2rem 1rem 1rem; }';
+
+    return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('RTL: padding: 1rem 1rem   1rem  3rem; -> padding: 1rem 3rem 1rem 1rem;', () => {
+    css = '.foo { padding: 1rem 1rem   1rem  3rem; }';
+    cssOutputted = '.foo { padding: 1rem 3rem 1rem 1rem; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
 });
