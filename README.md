@@ -1,13 +1,10 @@
 # PostCSS Start To End
 
-[![Build Status][ci-img]][ci]
+[![npm version](https://badge.fury.io/js/postcss-start-to-end.svg)](https://badge.fury.io/js/postcss-start-to-end)
+[![Build Status](https://travis-ci.org/sandrina-p/postcss-start-to-end.svg?branch=master)](https://travis-ci.org/sandrina-p/postcss-start-to-end)
 [![Coverage Status](https://coveralls.io/repos/github/sandrina-p/postcss-start-to-end/badge.svg)](https://coveralls.io/github/sandrina-p/postcss-start-to-end)
 
 [PostCSS](https://github.com/postcss/postcss) plugin that let you control your layout (`ltr` or `rtl`) through logical rather than direction / physical rules.
-
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/sandrina-p/postcss-start-to-end.svg?branch=master
-[ci]:      https://travis-ci.org/sandrina-p/postcss-start-to-end
 
 Inspired by Flexbox and CSS Grid syntax, use `start` or `end` to output `left` or `right` depending on document direction (`rtl` or `ltr`).
 
