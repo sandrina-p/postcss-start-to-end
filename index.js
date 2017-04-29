@@ -156,7 +156,9 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
 
             if (rule.value) {
 
-                warnAboutNoStartEndSyntax(rule.prop, rule.value, rule.source.start.line, result);
+                if (finalOpts.warnings) {
+                    warnAboutNoStartEndSyntax(rule.prop, rule.value, rule.source.start.line, result);
+                }
 
                 const newProp = convertPropsWithStartEnd(rule.prop);
                 if (newProp) {

@@ -339,7 +339,7 @@ it('LTR: Warn about float: right; to use float: end;', () => {
         });
 });
 
-it('LTR: Warn about float: right; to use float: end;', () => {
+it('RTL: Warn about float: right; to use float: end;', () => {
     css = '.foo { text-align: left; }';
     const warning = '"text-align: left;" found on line 1. Write instead "text-align: end;"';
 
@@ -354,4 +354,10 @@ it('LTR: Do not warn about float: center;', () => {
     css = '.foo { float: center; }';
 
     return run(css, css, { });
+});
+
+it('LTR: Do not warn when `warning: disabled`', () => {
+    css = '.foo { text-align: left; }';
+
+    return run(css, css, { warnings: false });
 });
