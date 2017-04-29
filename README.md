@@ -37,7 +37,7 @@ postcss([
 ```js
 postcss([
     require('postcss-start-to-end')({
-        direction: 'rtl',
+        direction: 'RTL',
         warnings: false,
     })
 ]);
@@ -59,7 +59,7 @@ Default writing mode of CSS.
 }
 ```
 
-**output with `direction: LTR`**
+**output with `direction: 'LTR'`**
 ```css
 .item {
     border-left: 1px solid teal;
@@ -67,7 +67,7 @@ Default writing mode of CSS.
 }
 ```
 
-**output with `direction: RTL`**
+**output with `direction: 'RTL'`**
 ```css
 .item {
     border-right: 1px solid teal;
@@ -77,7 +77,7 @@ Default writing mode of CSS.
 
 #### `warnings`
 Output on CLI (terminal) warnings about properties / rules found that don't follow start-to-end syntax.  
-**Type:** `bollean`  
+**Type:** `boolean`  
 **Default:** `true`  
 **Values:** `true`, `false`  
 
