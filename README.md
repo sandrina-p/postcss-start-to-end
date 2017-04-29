@@ -171,7 +171,6 @@ Set a specific file to run:
 ```
 
 ### Convert RTL layout
-`node node_modules/postcss-start-to-end/convert --rtl`
 
 _Convert_ by default runs on `src` folder    
 `node node_modules/postcss-start-to-end/convert --rtl`
