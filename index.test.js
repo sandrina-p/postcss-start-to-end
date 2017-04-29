@@ -292,7 +292,7 @@ it('RTL: Convert multiple rules', () => {
 
 it('LTR: Warn about margin-right to use margin-end ', () => {
     css = '.foo { margin-right: 1rem;}';
-    const warning = '"margin-right:" found on line 1. Write instead "margin-end"';
+    const warning = '"margin-right:" found on line 1. Replace it by "margin-end" to support LTR and RTL';
 
     return postcss([ plugin({}) ]).process(css)
         .then(result => {
@@ -303,7 +303,7 @@ it('LTR: Warn about margin-right to use margin-end ', () => {
 
 it('LTR: Warn about right to use end ', () => {
     css = '.foo { right: 10%;}';
-    const warning = '"right:" found on line 1. Write instead "end"';
+    const warning = '"right:" found on line 1. Replace it by "end" to support LTR and RTL';
 
     return postcss([ plugin({}) ]).process(css)
         .then(result => {
@@ -314,7 +314,7 @@ it('LTR: Warn about right to use end ', () => {
 
 it('RTL: Warn about padding-left to use padding-end', () => {
     css = '.foo { padding-left: 1rem; }';
-    const warning = '"padding-left:" found on line 1. Write instead "padding-end"';
+    const warning = '"padding-left:" found on line 1. Replace it by "padding-end" to support LTR and RTL';
 
     return postcss([ plugin( { direction: 'RTL' } ) ]).process(css)
         .then(result => {
@@ -330,7 +330,7 @@ it('RTL: Warn about padding-left to use padding-end', () => {
 
 it('LTR: Warn about float: right; to use float: end;', () => {
     css = '.foo { float: right; }';
-    const warning = '"float: right;" found on line 1. Write instead "float: end;"';
+    const warning = '"float: right;" found on line 1. Replace it by "float: end;" to support LTR and RTL';
 
     return postcss([ plugin() ]).process(css)
         .then(result => {
@@ -341,7 +341,7 @@ it('LTR: Warn about float: right; to use float: end;', () => {
 
 it('RTL: Warn about float: right; to use float: end;', () => {
     css = '.foo { text-align: left; }';
-    const warning = '"text-align: left;" found on line 1. Write instead "text-align: end;"';
+    const warning = '"text-align: left;" found on line 1. Replace it by "text-align: end;" to support LTR and RTL';
 
     return postcss([ plugin( { direction: 'RTL' } ) ]).process(css)
         .then(result => {

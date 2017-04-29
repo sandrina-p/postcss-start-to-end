@@ -89,6 +89,15 @@ Output on CLI (terminal) warnings about properties / rules found that don't foll
     }
 ```
 
+You'll need a tool to handle them, for example, [postcss-reporter](https://www.npmjs.com/package/postcss-browser-reporter).
+
+```js
+postcss([
+    require('postcss-start-to-end'),
+    require('postcss-reporter'),
+]);
+```
+
 **Console warning if `direction: ltr:`**
 >  margin-left: 10%; found on line 2. Replace it by `margin-start` to support LTR and RTL directions.
 

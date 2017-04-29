@@ -1,5 +1,5 @@
 /* eslint indent: ["error", 4, { "SwitchCase": 1 }] */
-/* eslint max-len: ["error", 120 ] */
+/* eslint max-len: ["error", 140 ] */
 
 var postcss = require('postcss');
 
@@ -40,7 +40,7 @@ function warnAboutNoStartEndSyntax(ruleProp, ruleValue, line, result) {
     if (propsToConvert.indexOf(ruleProp) > -1) {
         const newRule = ruleProp.replace('left', logic.left).replace('right', logic.right);
 
-        warningMsg = `"${ruleProp}:" found on line ${line}. Write instead "${newRule}"`;
+        warningMsg = `"${ruleProp}:" found on line ${line}. Replace it by "${newRule}" to support LTR and RTL`;
 
         result.warn(warningMsg);
 
@@ -50,7 +50,7 @@ function warnAboutNoStartEndSyntax(ruleProp, ruleValue, line, result) {
     if (propsWithValuesToConvert.indexOf(ruleProp) > -1 && ['left', 'right'].indexOf(ruleValue) > -1) {
         const newValue = ruleValue.replace('left', logic.left).replace('right', logic.right);
 
-        warningMsg = `"${ruleProp}: ${ruleValue};" found on line ${line}. Write instead "${ruleProp}: ${newValue};"`;
+        warningMsg = `"${ruleProp}: ${ruleValue};" found on line ${line}. Replace it by "${ruleProp}: ${newValue};" to support LTR and RTL`;
 
         result.warn(warningMsg);
 
