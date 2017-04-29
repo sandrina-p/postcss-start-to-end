@@ -192,7 +192,7 @@ Then if you need to convert the outputted CSS to the opposite direction you migh
 **Is this tested?**
 
 - The PostCSS Plugin has [100% coverage test](coverage/lcov-report/index.html) with all [possible scenarios](index.html) that crossed my mind.
-- The Bonus Converter tests will be added soon!
+- The Converter tests will be added soon!
 - Don't fear: [Travis-ci](https://travis-ci.org/sandrina-p/postcss-start-to-end) is doing it's job!
 
 
