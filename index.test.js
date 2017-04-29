@@ -273,15 +273,15 @@ it('RTL: float: end; -> float: left;', () => {
     Multiple Props Test
 ================================================================== */
 it('LTR: Convert multiple rules', () => {
-    css = '.foo { float: end; margin-end: 1rem;}';
-    cssOutputted = '.foo { float: right; margin-right: 1rem;}';
+    css = '.foo { color: red; float: end; margin-end: 1rem;}';
+    cssOutputted = '.foo { color: red; float: right; margin-right: 1rem;}';
 
     return run(css, cssOutputted, {});
 });
 
 it('RTL: Convert multiple rules', () => {
-    css = '.foo { float: end; margin-end: 1rem;}';
-    cssOutputted = '.foo { float: left; margin-left: 1rem;}';
+    css = '.foo { color: red; float: end; margin-end: 1rem;}';
+    cssOutputted = '.foo { color: red; float: left; margin-left: 1rem;}';
 
     return run(css, cssOutputted, { direction: 'RTL' });
 });
