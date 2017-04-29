@@ -24,18 +24,18 @@ it('LTR: border-start -> border-left', () => {
     return run(css, cssOutputted, { });
 });
 
-it('LTR: border-end -> border-right', () => {
-    css = '.foo { border-end: 1px solid teal; }';
-    cssOutputted = '.foo { border-right: 1px solid teal; }';
-
-    return run(css, cssOutputted, { });
-});
-
 it('RTL: border-start -> border-right', () => {
     css = '.foo { border-start: 1px solid teal; }';
     cssOutputted = '.foo { border-right: 1px solid teal; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('LTR: border-end -> border-right', () => {
+    css = '.foo { border-end: 1px solid teal; }';
+    cssOutputted = '.foo { border-right: 1px solid teal; }';
+
+    return run(css, cssOutputted, { });
 });
 
 it('RTL: border-end -> border-left', () => {
@@ -56,18 +56,18 @@ it('LTR: padding-start -> padding-left', () => {
     return run(css, cssOutputted, { });
 });
 
-it('LTR: padding-end -> padding-right', () => {
-    css = '.foo { padding-end: 1rem; }';
-    cssOutputted = '.foo { padding-right: 1rem; }';
-
-    return run(css, cssOutputted, { });
-});
-
 it('RTL: padding-start -> padding-right', () => {
     css = '.foo { padding-start: 1rem; }';
     cssOutputted = '.foo { padding-right: 1rem; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('LTR: padding-end -> padding-right', () => {
+    css = '.foo { padding-end: 1rem; }';
+    cssOutputted = '.foo { padding-right: 1rem; }';
+
+    return run(css, cssOutputted, { });
 });
 
 it('RTL: padding-end -> padding-left', () => {
@@ -89,18 +89,18 @@ it('LTR: margin-start -> margin-left', () => {
     return run(css, cssOutputted, { });
 });
 
-it('LTR: margin-end -> margin-right', () => {
-    css = '.foo { margin-end: 1rem; }';
-    cssOutputted = '.foo { margin-right: 1rem; }';
-
-    return run(css, cssOutputted, { });
-});
-
 it('RTL: margin-start -> margin-right', () => {
     css = '.foo { margin-start: 1rem; }';
     cssOutputted = '.foo { margin-right: 1rem; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('LTR: margin-end -> margin-right', () => {
+    css = '.foo { margin-end: 1rem; }';
+    cssOutputted = '.foo { margin-right: 1rem; }';
+
+    return run(css, cssOutputted, { });
 });
 
 it('RTL: margin-end -> margin-left', () => {
@@ -121,18 +121,18 @@ it('LTR: start -> left', () => {
     return run(css, cssOutputted, { });
 });
 
-it('LTR: end -> right', () => {
-    css = '.foo { end: 1rem; }';
-    cssOutputted = '.foo { right: 1rem; }';
-
-    return run(css, cssOutputted, { });
-});
-
 it('RTL: start -> right', () => {
     css = '.foo { start: 1rem; }';
     cssOutputted = '.foo { right: 1rem; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('LTR: end -> right', () => {
+    css = '.foo { end: 1rem; }';
+    cssOutputted = '.foo { right: 1rem; }';
+
+    return run(css, cssOutputted, { });
 });
 
 it('RTL: end -> left', () => {
