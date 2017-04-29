@@ -20,8 +20,6 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
 
         root.walkDecls(rule => {
 
-            console.log(rule);
-
             switch (rule.prop) {
 
                 // prop that contains "start"
@@ -45,9 +43,14 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
                     break;
 
                 // prop.value that contains "start"
-                case 'text-align':
                 case 'clear':
-                    rule.value = rule.value.replace('end', `${logic.end}`);
+                case 'float':
+                case 'text-align':
+                    if (rule.value === 'start') {
+                        rule.value = logic.start;
+                    } else if ( rule.value === 'end') {
+                        rule.value = logic.end;
+                    }
                     break;
                 default:
             }
