@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Tests on /convert needed
 
+## [0.2.2] - 2017-04-30
+- Added Coveralls integration
+
 ## [0.2.1] - 2017-04-30
 - Added npm badge
 

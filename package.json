@@ -34,12 +34,13 @@
     "postcss-browser-reporter": "^0.5.0"
   },
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^3.12.2",
     "eslint-config-postcss": "^2.0.2",
     "jest": "^18.0.0"
   },
   "scripts": {
-    "test": "jest && eslint *.js"
+    "test": "jest --coverage && eslint *.js"
   },
   "eslintConfig": {
     "extends": "eslint-config-postcss/es5",

@@ -4,3 +4,5 @@ node_js:
   - stable
   - "6"
   - "4"
+after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
