@@ -12,10 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Tests on /convert needed
 
 ## [0.2.2] - 2017-04-30
-- Added Coveralls integration
+### Added
+- Coveralls integration
 
 ## [0.2.1] - 2017-04-30
-- Added npm badge
+### Added
+- Npm badge
 
 ## [0.1.0] - 2017-04-30
 ### Added
