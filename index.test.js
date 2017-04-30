@@ -351,7 +351,7 @@ it('LTR: Warn about float: right; to use float: end;', () => {
         });
 });
 
-it('RTL: Warn about float: right; to use float: end;', () => {
+it('RTL: Warn about float: left; to use float: end;', () => {
     css = '.foo { text-align: left; }';
     const warning = '"text-align: left;" found on line 1. Replace it by "text-align: end;" to support LTR and RTL';
 
