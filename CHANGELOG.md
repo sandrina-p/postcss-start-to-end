@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Tests on /convert needed
 
+## [0.3.0] - 2017-04-30
+### Changed
+- Replace `postcss-browser-reporter` by `postcss-reporter`
+
 ## [0.2.2] - 2017-04-30
 ### Added
 - Coveralls integration
