@@ -1,5 +1,5 @@
 .foo {
     color: blue;
-    padding-end: 5px;
-    float: end;
+    padding-left: 5px;
+    float: right;
 }
