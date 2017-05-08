@@ -124,8 +124,8 @@ function walkDone(err) {
 function setOptions() {
 
     // default logic follows LTR;
-    logic.left = 'end';
-    logic.right = 'start';
+    logic.left = 'start';
+    logic.right = 'end';
 
     process.argv.forEach((val, index) => {
         if (val == '--RTL') {
