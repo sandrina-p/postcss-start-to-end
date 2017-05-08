@@ -1,5 +1,5 @@
 .foo {
     color: blue;
-    margin-start: 10px;
-    clear: end;
+    margin-left: 10px;
+    clear: right;
 }

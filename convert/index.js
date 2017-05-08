@@ -82,7 +82,6 @@ function walkDir(dir, done) {
 
             if (!file) {
                 console.log('Search on folder', dir, 'finished');
-                return false;
             }
 
             file = dir + '/' + file;
