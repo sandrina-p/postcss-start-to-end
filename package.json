@@ -1,6 +1,6 @@
 {
   "name": "postcss-start-to-end",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "PostCSS plugin that lets you control your layout (ltr or rtl) through logical rather than physical rules",
   "keywords": [
     "postcss",
