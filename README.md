@@ -48,10 +48,10 @@ postcss([
 ## Options
 
 #### `direction`
-Default writing mode of CSS.  
-**Type:** `string`  
-**Default:** `'LTR'`  
-**Values:** `'LTR'`, `'RTL'`  
+Default writing mode of CSS.
+**Type:** `string`
+**Default:** `'LTR'`
+**Values:** `'LTR'`, `'RTL'`
 
 **Input**
 ```css
@@ -78,10 +78,10 @@ Default writing mode of CSS.
 ```
 
 #### `warnings`
-Output on CLI warnings about properties / rules found that don't follow start-to-end syntax.  
-**Type:** `boolean`  
-**Default:** `true`  
-**Values:** `true`, `false`  
+Output on CLI warnings about properties / rules found that don't follow start-to-end syntax.
+**Type:** `boolean`
+**Default:** `true`
+**Values:** `true`, `false`
 
 **Example**
 
@@ -97,6 +97,12 @@ Output on CLI warnings about properties / rules found that don't follow start-to
 **Console warning if `direction: rtl:`**
 >  margin-left: 10%; found on line 2. Replace it by `margin-end` to support LTR and RTL directions.
 
+
+#### `ignoreNodeModules`
+Ignore any CSS file inside `/node_modules` folder.
+**Type:** `boolean`
+**Default:** `true`
+**Values:** `true`, `false`
 
 
 ## Rules supported
@@ -149,13 +155,13 @@ You just need to tell where you want to run the converter (folder or file.css). 
 ```
 
 ### Convert from LTR layout
-_Convert_ by default runs on `src` folder  
+_Convert_ by default runs on `src` folder
 `node node_modules/postcss-start-to-end/convert`
 
-Set a specific folder to run:  
+Set a specific folder to run:
 `node node_modules/postcss-start-to-end/convert src/components`
 
-Set a specific file to run:  
+Set a specific file to run:
 `node node_modules/postcss-start-to-end/convert styles/index.css`
 
 **Output**
@@ -169,13 +175,13 @@ Set a specific file to run:
 
 ### Convert RTL layout
 
-_Convert_ by default runs on `src` folder    
+_Convert_ by default runs on `src` folder
 `node node_modules/postcss-start-to-end/convert --rtl`
 
-Set a specific folder to run:  
+Set a specific folder to run:
 `node node_modules/postcss-start-to-end/convert src/components --rtl`
 
-Set a specific file to run:  
+Set a specific file to run:
 `node node_modules/postcss-start-to-end/convert styles/index.css --rtl`
 
 **Output**
@@ -207,7 +213,7 @@ Then if you need to convert the outputted CSS to the opposite direction you migh
 
 ## Motivation | References
 
-There is a CSS Draft Spec about [CSS Logical Properties](https://drafts.csswg.org/css-logical-props/) in Level 1.  
+There is a CSS Draft Spec about [CSS Logical Properties](https://drafts.csswg.org/css-logical-props/) in Level 1.
 Because this technology's specification [has not stabilized](https://drafts.csswg.org/css-logical-props/#issues-index), I decided to keep this plugin syntax simple and straight following what is already defined without adding _more sugar_.
 
 

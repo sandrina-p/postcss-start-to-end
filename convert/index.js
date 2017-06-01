@@ -1,6 +1,22 @@
 /* eslint-disable no-console */
 /* global process */
 
+/* ========================================================================
+Convert direction rules to logical rules.
+Ex: padding-left: 5px; -> padding-start: 5px;
+
+HOW TO USE:
+
+1. Copy this file to your project root.
+2. Run `node convert`
+    This will convert all *.css files inside /src
+    If you want to run it in other folder/file, just run
+    `node convert myfolder/file.css` or `node conver myfolder/`
+
+3. If, for some reason, some rule wasn't converted, open a issue.
+
+======================================================================== */
+
 var fs = require('fs');
 var path = require('path');
 var pathToConvert = 'src';
@@ -13,46 +29,59 @@ function convertNewValues(data, fileDir) {
         // replace "<prop>: <rule>"
         .replace(/margin-left:/g, `margin-${logic.left}:`)
         .replace(/margin-right:/g, `margin-${logic.right}:`)
+
         .replace(/padding-left:/g, `padding-${logic.left}:`)
         .replace(/padding-right:/g, `padding-${logic.right}:`)
+
         .replace(/border-left:/g, `border-${logic.left}:`)
         .replace(/border-right:/g, `border-${logic.right}:`)
         .replace(/border-top-left:/g, `border-top-${logic.left}:`)
         .replace(/border-top-right:/g, `border-top-${logic.right}:`)
         .replace(/border-bottom-right:/g, `border-bottom-${logic.right}:`)
         .replace(/border-bottom-left:/g, `border-bottom-${logic.left}:`)
+
         .replace(/left:/g, `${logic.left}:`)
         .replace(/right:/g, `${logic.right}:`)
+
         .replace(/text-align: left/g, `text-align: ${logic.left}`)
         .replace(/text-align: right/g, `text-align: ${logic.right}`)
+
         .replace(/clear: left/g, `clear: ${logic.left}`)
         .replace(/clear: right/g, `clear: ${logic.right}`)
+
         .replace(/float: left/g, `float: ${logic.left}`)
         .replace(/float: right/g, `float: ${logic.right}`)
 
         // replace "<prop> :"
         .replace(/margin-left :/g, `margin-${logic.left} :`)
         .replace(/margin-right :/g, `margin-${logic.right} :`)
+
         .replace(/padding-left :/g, `padding-${logic.left} :`)
         .replace(/padding-right :/g, `padding-${logic.right} :`)
+
         .replace(/border-left :/g, `border-${logic.left} :`)
         .replace(/border-right :/g, `border-${logic.right} :`)
         .replace(/border-top-left :/g, `border-top-${logic.left} :`)
         .replace(/border-top-right :/g, `border-top-${logic.right} :`)
         .replace(/border-bottom-right :/g, `border-bottom-${logic.right} :`)
         .replace(/border-bottom-left :/g, `border-bottom-${logic.left} :`)
+
         .replace(/left :/g, `${logic.left} :`)
         .replace(/right :/g, `${logic.right} :`)
+
         .replace(/text-align : left/g, `text-align : ${logic.left}`)
         .replace(/text-align : right/g, `text-align : ${logic.right}`)
+
         .replace(/clear : left/g, `clear : ${logic.left}`)
         .replace(/clear : right/g, `clear : ${logic.right}`)
+
         .replace(/float : left/g, `float : ${logic.left}`)
         .replace(/float : right/g, `float : ${logic.right}`)
 
         // replace "<prop>:<rule>"
         .replace(/clear:left/g, `clear:${logic.left}`)
         .replace(/clear:right/g, `clear:${logic.right}`)
+
         .replace(/float:left/g, `float:${logic.left}`)
         .replace(/float:right/g, `float:${logic.right}`);
     return newData;
