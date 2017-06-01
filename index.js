@@ -6,7 +6,7 @@ var postcss = require('postcss');
 const defaultOpts = {
     direction: 'LTR',
     warnings: true,
-    ignoreNodeModules: false,
+    ignoreNodeModules: true,
 };
 
 const propsToConvert = [
