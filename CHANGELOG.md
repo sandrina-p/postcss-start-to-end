@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
--
+- Add option `ignoreNodeModules` that ignores any CSS file inside `/node_modules` folder.
 
 ### Changed
 - Tests on /convert needed

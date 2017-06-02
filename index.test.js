@@ -79,6 +79,7 @@ it('RTL: padding-end -> padding-left:', () => {
     return run(css, cssOutputted, { direction: 'RTL' });
 });
 
+// With 4 values
 it('LTR: padding: 1rem 1rem 1rem 2rem; -> same', () => {
     css = '.foo { padding: 1rem 1rem 1rem 2rem; }';
 
@@ -148,6 +149,45 @@ it('RTL: margin-end -> margin-left:', () => {
     cssOutputted = '.foo { margin-left: 1rem; }';
 
     return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+// With 4 values
+it('LTR: margin: 1rem 1rem 1rem 2rem; -> same', () => {
+    css = '.foo { margin: 1rem 1rem 1rem 2rem; }';
+
+    return run(css, css, {});
+});
+
+it('LTR: margin: 1rem 2rem 1rem; -> same', () => {
+    css = '.foo { margin: 1rem 1rem 2rem; }';
+
+    return run(css, css, {});
+});
+
+it('LTR: margin: 1rem 1rem   1rem  2rem; -> same', () => {
+    css = '.foo { margin: 1rem 1rem   1rem  2rem; }';
+
+    return run(css, css, {});
+});
+
+it('RTL: margin: 1rem 2rem 1rem 2rem; -> margin: 1rem 2rem 1rem 1rem;', () => {
+    css = '.foo { margin: 1rem 1rem 1rem 2rem; }';
+    cssOutputted = '.foo { margin: 1rem 2rem 1rem 1rem; }';
+
+    return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('RTL: margin: 1rem 1rem   1rem  3rem; -> margin: 1rem 3rem 1rem 1rem;', () => {
+    css = '.foo { margin: 1rem 1rem   1rem  3rem; }';
+    cssOutputted = '.foo { margin: 1rem 3rem 1rem 1rem; }';
+
+    return run(css, cssOutputted, { direction: 'RTL' });
+});
+
+it('RTL: margin: 1rem 1rem 3rem; -> same', () => {
+    css = '.foo { margin: 1rem 1rem 3rem; }';
+
+    return run(css, css, { direction: 'RTL' });
 });
 
 /* ==================================================================
@@ -372,4 +412,39 @@ it('LTR: Do not warn when `warning: disabled`', () => {
     css = '.foo { text-align: left; }';
 
     return run(css, css, { warnings: false });
+});
+
+/* ==================================================================
+    ignoreNodeModules test
+================================================================== */
+it('Do not modify or warn if file path is on node_modules`', () => {
+    css = '.foo { text-align: left; }';
+    cssOutputted = css;
+
+    return postcss([ plugin() ]).process(css, { from: 'test/node_modules/package/' })
+        .then(result => {
+            expect(result.css).toEqual(cssOutputted);
+            expect(result.warnings().length).toBe(0);
+        });
+});
+
+it('Modify and warn if file path is not on node_modules`', () => {
+    css = '.foo { float: right; }';
+    const warning = '"float: right;" found on line 1. Replace it by "float: end;" to support LTR and RTL';
+
+    return postcss([ plugin() ]).process(css,  { from: 'test/component/' })
+        .then(result => {
+            expect(result.css).toEqual(css);
+            expect(result.warnings()[0]).toHaveProperty('text', warning);
+        });
+});
+
+/* ==================================================================
+    Empty rules test
+================================================================== */
+
+it('Do nothing if rule doesnt have value', () => {
+    css = '.foo { text-align:; }';
+
+    return run(css, css);
 });

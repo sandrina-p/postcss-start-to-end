@@ -5,7 +5,8 @@ var postcss = require('postcss');
 
 const defaultOpts = {
     direction: 'LTR',
-    warnings: true
+    warnings: true,
+    ignoreNodeModules: true,
 };
 
 const propsToConvert = [
@@ -153,6 +154,9 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
 
         // Transform CSS AST
         root.walkDecls(rule => {
+            if (finalOpts.ignoreNodeModules && rule.source.input.file && rule.source.input.file.indexOf('/node_modules') > 0) {
+                return false;
+            }
 
             if (rule.value) {
                 if (finalOpts.warnings) {
