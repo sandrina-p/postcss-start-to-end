@@ -35,9 +35,9 @@
   },
   "devDependencies": {
     "coveralls": "^2.13.1",
-    "eslint": "^3.12.2",
+    "eslint": "^3.19.0",
     "eslint-config-postcss": "^2.0.2",
-    "jest": "^18.0.0"
+    "jest": "^20.0.4"
   },
   "scripts": {
     "test": "jest --coverage && eslint *.js"
