@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### TODO
 - Tests on /convert needed
 
+## [1.0.0] - 2017-06-14
+### Added
+- Updated to `postcss 6.x.x`.
+
 ## [0.3.4] - 2017-06-02
 ### Added
 - Add option `ignoreNodeModules` that ignores any CSS file inside `/node_modules` folder.
