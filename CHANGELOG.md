@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## [1.0.1] - 2017-06-14
+## [1.0.1] - 2017-09-14
 ### Fix
 - Issue with node_modules path
 - Direction can be `LTR` or `ltr`
