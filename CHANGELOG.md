@@ -8,13 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Fix
-- Issue with node_modules path
-- Direction can be `LTR` or `ltr`;
 
 ### TODO
 - Tests on /convert needed
 
 ---
+
+## [1.0.1] - 2017-06-14
+### Fix
+- Issue with node_modules path
+- Direction can be `LTR` or `ltr`
 
 ## [1.0.0] - 2017-06-14
 ### Added
