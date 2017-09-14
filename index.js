@@ -33,29 +33,24 @@ const propsWithValuesToConvert = [
 var finalOpts = {};
 var isLTR = null;
 var logic = {};
-var warningMsg = '';
-
 
 function warnAboutNoStartEndSyntax(ruleProp, ruleValue, line, result) {
+    const warningMsg = (rule, line, newRule) => `"${rule}" found on line ${line}. Replace it by "${newRule}" to support LTR and RTL`;
 
     if (propsToConvert.indexOf(ruleProp) > -1) {
         const newRule = ruleProp.replace('left', logic.left).replace('right', logic.right);
 
-        warningMsg = `"${ruleProp}:" found on line ${line}. Replace it by "${newRule}" to support LTR and RTL`;
-
-        result.warn(warningMsg);
-
-        return true;
+        return result.warn(
+            warningMsg(`${ruleProp}:`, line, newRule)
+        );
     }
 
     if (propsWithValuesToConvert.indexOf(ruleProp) > -1 && ['left', 'right'].indexOf(ruleValue) > -1) {
         const newValue = ruleValue.replace('left', logic.left).replace('right', logic.right);
 
-        warningMsg = `"${ruleProp}: ${ruleValue};" found on line ${line}. Replace it by "${ruleProp}: ${newValue};" to support LTR and RTL`;
-
-        result.warn(warningMsg);
-
-        return true;
+        return result.warn(
+            warningMsg(`${ruleProp}: ${ruleValue};`, line, `${ruleProp}: ${newValue};`)
+        );
     }
 
     return false;
@@ -151,10 +146,8 @@ module.exports = postcss.plugin('postcss-start-to-end', opts => {
     };
 
     return (root, result) => {
-
-        // Transform CSS AST
         root.walkDecls(rule => {
-            if (finalOpts.ignoreNodeModules && rule.source.input.file && rule.source.input.file.indexOf('/node_modules') > 0) {
+            if (finalOpts.ignoreNodeModules && rule.source.input.file && rule.source.input.file.indexOf('node_modules') > -1) {
                 return false;
             }
 
